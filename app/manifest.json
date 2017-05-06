@@ -1,0 +1,27 @@
+{
+  "version": "0.0.0",
+  "name": "EC2 Instance Status",
+  "short_name": "Instance Status",
+  "manifest_version": 2,
+  "description": "See EC2 Instance Status in chrome",
+  "author": "Moti Korets",
+  "browser_action": {
+    "default_icon": {
+      "128": "img/gray-128.png"
+    },
+    "default_title": "Configure settings"
+  },
+  "icons": {
+    "128": "img/gray-128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "background": {
+    "scripts": ["aws-sdk.js","background.js"],
+    "persistent": false
+  },
+  "permissions": [ "storage", "tabs" ],
+  "content_security_policy": "default-src 'self'; script-src 'self' https://ssl.google-analytics.com; connect-src https://*.amazonaws.com/;"
+}
