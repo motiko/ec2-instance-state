@@ -20,7 +20,7 @@
   },
   "background": {
     "scripts": ["aws-sdk.js","background.js"],
-    "persistent": false
+    "persistent": true
   },
   "permissions": [ "storage", "tabs" ],
   "content_security_policy": "default-src 'self'; script-src 'self' https://ssl.google-analytics.com; connect-src https://*.amazonaws.com/;"
