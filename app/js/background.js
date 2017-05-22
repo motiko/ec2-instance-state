@@ -1,13 +1,15 @@
 let intervalId;
 
-chrome.storage.sync.get('options', ({options}) => {
-  restartFetching(options)
-})
+function loadOptionsAndFetch(){
+  loadOptions().then( options  => restartFetching(options) )
+}
 
 chrome.storage.onChanged.addListener(function({options}, area){
   if(area != "sync") return
-  restartFetching(options.newValue)
+  loadOptionsAndFetch()
 })
+
+loadOptionsAndFetch()
 
 function restartFetching(options){
   if(!options) return
@@ -34,6 +36,7 @@ function fetchStatus(options){
   })
 }
 
+///////////////////////////////////////////////////////////////////////////////
 
 let optionsTabId = ""
 
