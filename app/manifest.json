@@ -19,7 +19,7 @@
     "chrome_style": true
   },
   "background": {
-    "scripts": ["aws-sdk.js","background.js"],
+    "scripts": ["js/aws-sdk.js","js/background.js"],
     "persistent": true
   },
   "permissions": [ "storage", "tabs" ],
